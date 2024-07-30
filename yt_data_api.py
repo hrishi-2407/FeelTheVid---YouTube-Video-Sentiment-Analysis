@@ -16,7 +16,6 @@ from slang_dict import slang_dict
 from textblob import Word
 import string
 import emoji
-from api_key import YOUTUBE_API_KEY
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 import os
@@ -27,7 +26,7 @@ nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-api_key = YOUTUBE_API_KEY
+api_key = 'YOUR-API-KEY'
 
 def scrape_youtube_comments(url, max_comments):
     """Scrape comments from a YouTube video"""
