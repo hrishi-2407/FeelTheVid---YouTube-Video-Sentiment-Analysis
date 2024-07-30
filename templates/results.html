@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis Results</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1, h2 { color: #333; }
+        pre { background-color: #f4f4f4; padding: 10px; border-radius: 5px; }
+        img { max-width: 100%; height: auto; margin-top: 20px; }
+        .visualization { margin-bottom: 30px; }
+        .dataframe { border-collapse: collapse; width: 100%; }
+        .dataframe th, .dataframe td { border: 1px solid black; padding: 8px; text-align: left; }
+        .scrollable-table { overflow-x: auto; }
+    </style>
+</head>
+<body>
+    <h1>Sentiment Analysis Results</h1>
+    
+    <h2>Summary</h2>
+    <pre>{{ summary }}</pre>
+
+    <h2>Data Table</h2>
+    <div class="scrollable-table">
+        {{ table_data | safe }}
+    </div>
+    
+    <div class="visualization">
+        <h2>Word Cloud</h2>
+        <img src="{{ url_for('static', filename=wordcloud) }}" alt="Word Cloud">
+    </div>
+    
+    <div class="visualization">
+        <h2>Sentiment Distribution (Bar Chart)</h2>
+        <img src="{{ url_for('static', filename=barchart) }}" alt="Sentiment Distribution Bar Chart">
+    </div>
+    
+    <div class="visualization">
+        <h2>Sentiment Distribution (Pie Chart)</h2>
+        <img src="{{ url_for('static', filename=piechart) }}" alt="Sentiment Distribution Pie Chart">
+    </div>
+    
+    <p><a href="{{ url_for('index') }}">Analyze another video</a></p>
+</body>
+</html>
